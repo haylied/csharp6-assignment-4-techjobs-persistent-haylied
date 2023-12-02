@@ -10,7 +10,7 @@ else
 {
     <table class="table">
         <tr>
-            <th>Id
+            <th>Id</th>
             <th>Employer</th>
         </tr>
         @foreach (Employer employer in Model)
@@ -24,3 +24,4 @@ else
 }
 
 
+<a class="btn btn-primary" asp-controller="Employer" asp-action="Create" role="button">Add New Employer</a>
