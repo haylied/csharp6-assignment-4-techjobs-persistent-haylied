@@ -15,7 +15,7 @@ namespace TechJobs6Persistent.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.15")
+                .HasAnnotation("ProductVersion", "6.0.25")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("JobSkill", b =>
@@ -30,7 +30,7 @@ namespace TechJobs6Persistent.Migrations
 
                     b.HasIndex("SkillsId");
 
-                    b.ToTable("JobSkills", (string)null);
+                    b.ToTable("JobSkill");
                 });
 
             modelBuilder.Entity("TechJobs6Persistent.Models.Employer", b =>
@@ -106,17 +106,12 @@ namespace TechJobs6Persistent.Migrations
             modelBuilder.Entity("TechJobs6Persistent.Models.Job", b =>
                 {
                     b.HasOne("TechJobs6Persistent.Models.Employer", "Employer")
-                        .WithMany("Jobs")
+                        .WithMany()
                         .HasForeignKey("EmployerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Employer");
-                });
-
-            modelBuilder.Entity("TechJobs6Persistent.Models.Employer", b =>
-                {
-                    b.Navigation("Jobs");
                 });
 #pragma warning restore 612, 618
         }
