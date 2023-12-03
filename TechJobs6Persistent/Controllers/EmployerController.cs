@@ -52,9 +52,10 @@ namespace TechJobs6Persistent.Controllers
                 context.Employers?.Add(anEmployer);
                 context.SaveChanges();
 
-                return View(addEmployerViewModel);
+                return View("/Employer", addEmployerViewModel);
               
-            } else
+            }
+            else
             {
                 return Redirect("/Create");
             }
