@@ -6,7 +6,7 @@ namespace TechJobs6Persistent.ViewModels
 {
 	public class AddEmployerViewModel
 	{
-		[Required(ErrorMessage= "Name is required.")]
+        [Required(ErrorMessage = "Name is required.")]
 		[StringLength(50, MinimumLength = 3, ErrorMessage = "Name needs to be between 3 - 50 characters in length.")]
 		public string Name { get; set; }
 
@@ -22,9 +22,17 @@ namespace TechJobs6Persistent.ViewModels
 			Employers = employers;
         }
 
+        //      public AddEmployerViewModel(string name, string location)
+        //{
+        //	Name = name;
+        //	Location = location;
+        //}
+
         public AddEmployerViewModel()
-		{
-		}
-	}
+        {
+         
+        }
+    }
+
 }
 

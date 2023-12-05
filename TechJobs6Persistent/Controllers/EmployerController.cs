@@ -41,14 +41,19 @@ namespace TechJobs6Persistent.Controllers
         [Route("/Create")]
         public IActionResult Create(AddEmployerViewModel addEmployerViewModel)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine(ModelState.IsValid);
+                return Redirect("/Create");
+            }
+            else
             {
                 Employer anEmployer = new Employer
                 {
                     Name = addEmployerViewModel.Name,
                     Location = addEmployerViewModel.Location
                 };
-
+                Console.WriteLine(ModelState.IsValid);
                 context.Employers?.Add(anEmployer);
                 context.SaveChanges();
 
@@ -56,12 +61,8 @@ namespace TechJobs6Persistent.Controllers
 
 
             }
-            else
-            {
-                return Redirect("/Create");
-            }
 
-            
+
         }
 
         public IActionResult About(int id)
