@@ -25,7 +25,7 @@ namespace TechJobs6Persistent.Controllers
         public IActionResult Index()
         {
             List<Job> jobs = context.Jobs.Include(j => j.Employer).ToList();
-
+            //List<Job> jobs = context.Jobs.Include(j => j.EmployerId).ToList();
             return View(jobs);
         }
 
@@ -45,13 +45,14 @@ namespace TechJobs6Persistent.Controllers
             {
                 Job job = new Job
                 {
-                    Name = addJobViewModel.Name
+                    Name = addJobViewModel.Name,
+                    EmployerId = addJobViewModel.EmployerId,
                 };
 
                 context.Jobs.Add(job);
                 context.SaveChanges();
 
-                return Redirect("/Jobs");
+                return Redirect("Index");
             }
             return View();
         }

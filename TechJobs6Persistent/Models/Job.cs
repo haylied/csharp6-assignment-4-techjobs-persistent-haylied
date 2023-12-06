@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
+using TechJobs6Persistent.Models;
 
 namespace TechJobs6Persistent.Models
 {
@@ -17,6 +18,7 @@ namespace TechJobs6Persistent.Models
         {
             Name = name;
             Skills = new List<Skill>();
+          
         }
 
         public Job()

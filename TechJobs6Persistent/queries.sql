@@ -18,7 +18,8 @@
 --Part 3: Write a query to return a list of the names and descriptions of all skills that are attached to jobs in alphabetical order.
     --If a skill does not have a job listed, it should not be included in the results of this query.
 
------ SELECT TechJobs.Skills.SkillName 
------ FROM TechJobs.JobSkill 
------ WHERE JobSkill.JobsId IS NOT NULL
------ ORDER BY Jobs.Name ASC
+----- SELECT TechJobs.Skills.SkillName
+----- FROM TechJobs.Skills
+----- INNER JOIN TechJobs.JobSkill ON TechJobs.JobSkill.SkillsId = TechJobs.Skills.Id
+----- WHERE TechJobs.JobSkill.JobsId IS NOT NULL
+----- ORDER BY TechJobs.Skills.SkillName ASC

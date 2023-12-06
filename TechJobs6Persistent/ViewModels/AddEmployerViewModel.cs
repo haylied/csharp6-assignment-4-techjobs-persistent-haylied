@@ -14,19 +14,6 @@ namespace TechJobs6Persistent.ViewModels
         [StringLength(500, MinimumLength = 3, ErrorMessage = "Location needs to be between 3 - 500 characters in length.")]
         public string Location { get; set; }
 
-		public List<Employer> Employers { get; set; }
-
-
-        public AddEmployerViewModel(List<Employer> employers)
-        {
-			Employers = employers;
-        }
-
-        //      public AddEmployerViewModel(string name, string location)
-        //{
-        //	Name = name;
-        //	Location = location;
-        //}
 
         public AddEmployerViewModel()
         {
